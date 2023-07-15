@@ -1,0 +1,507 @@
+<html>
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+
+		<title>Autobox Loan Agreement</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.28.2/docxtemplater.js"></script>
+		<script src="https://unpkg.com/pizzip@3.1.1/dist/pizzip.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
+		<script src="https://unpkg.com/pizzip@3.1.1/dist/pizzip-utils.js"></script>
+		<script type="text/javascript" src="./toWord.js"></script>
+	</head>
+	<body>
+		<main class="my-5 mx-2">
+			<div>
+				<div class="text-center text-uppercase fs-2 fw-bold my-2">
+					Autobox Motors Limited
+				</div>
+				<div class="text-center mb-5 fw-bold">
+					Loan Agreement. Fill with capital letters
+				</div>
+				<form class="col-lg-8 col-md-12 col-sm-12 mx-auto">
+					<div class="mb-3 row">
+						<label for="date" class="col-sm-3 col-form-label"
+							>Date</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="date"
+								class="form-control"
+								id="date"
+								required
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="buyer" class="col-sm-3 col-form-label"
+							>NAME OF THE BUYER</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="text"
+								class="form-control"
+								id="buyer"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="tel" class="col-sm-3 col-form-label"
+							>TEL</label
+						>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="tel" />
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="address" class="col-sm-3 col-form-label"
+							>ADDRESS</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="text"
+								class="form-control"
+								id="address"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="ID/PP/NO" class="col-sm-3 col-form-label"
+							>ID/PP/NO</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="text"
+								class="form-control"
+								id="ID/PP/NO"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label
+							for="car-description"
+							class="col-sm-3 col-form-label"
+							>DESCRIPTION OF THE CAR</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="text"
+								class="form-control"
+								id="car-description"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="reg" class="col-sm-3 col-form-label"
+							>REG</label
+						>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="reg" />
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="chassis" class="col-sm-3 col-form-label"
+							>CHASSIS NO</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="text"
+								class="form-control"
+								id="chassis"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="engine" class="col-sm-3 col-form-label"
+							>ENGINE NO</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="text"
+								class="form-control"
+								id="engine"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="model" class="col-sm-3 col-form-label"
+							>MODEL</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="text"
+								class="form-control"
+								id="model"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label
+							for="registration-year"
+							class="col-sm-3 col-form-label"
+							>YEAR OF THE FIRST REGISTRATION</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="text"
+								class="form-control"
+								id="registration-year"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="fuel" class="col-sm-3 col-form-label"
+							>FUEL</label
+						>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="fuel" />
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="colour" class="col-sm-3 col-form-label"
+							>COLOUR</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="text"
+								class="form-control"
+								id="colour"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="cc" class="col-sm-3 col-form-label"
+							>CC</label
+						>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="cc" />
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="sale price" class="col-sm-3 col-form-label"
+							>SALE PRICE KSHS</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="number"
+								class="form-control"
+								id="sale price"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="deposit" class="col-sm-3 col-form-label"
+							>DEPOSIT KSHS</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="number"
+								class="form-control"
+								id="deposit"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="balance" class="col-sm-3 col-form-label"
+							>BALANCE TO PAY KSHS</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="number"
+								class="form-control"
+								id="balance"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="1st" class="col-sm-3 col-form-label"
+							>1ST INSTALMENT</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="number"
+								class="form-control"
+								id="1st"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="2nd" class="col-sm-3 col-form-label"
+							>2ND INSTALMENT</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="number"
+								class="form-control"
+								id="2nd"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="3rd" class="col-sm-3 col-form-label"
+							>3RD INSTALMENT</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="number"
+								class="form-control"
+								id="3rd"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="4th" class="col-sm-3 col-form-label"
+							>4TH INSTALMENT</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="number"
+								class="form-control"
+								id="4th"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="5th" class="col-sm-3 col-form-label"
+							>5TH INSTALMENT</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="number"
+								class="form-control"
+								id="5th"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="6th" class="col-sm-3 col-form-label"
+							>6TH INSTALMENT</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="number"
+								class="form-control"
+								id="6th"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="7th" class="col-sm-3 col-form-label"
+							>7TH INSTALMENT</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="number"
+								class="form-control"
+								id="7th"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="8th" class="col-sm-3 col-form-label"
+							>8TH INSTALMENT</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="number"
+								class="form-control"
+								id="8th"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="9th" class="col-sm-3 col-form-label"
+							>9TH INSTALMENT</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="number"
+								class="form-control"
+								id="9th"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="10th" class="col-sm-3 col-form-label"
+							>10th INSTALMENT</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="number"
+								class="form-control"
+								id="10th"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label
+							for="payment-mode"
+							class="col-sm-3 col-form-label"
+							>MODE OF PAYEMNT</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="text"
+								class="form-control"
+								id="payment-mode"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<label for="penalty" class="col-sm-3 col-form-label"
+							>PENALTY RATE IF PAYMENT IS NOT MADE WITHIN DUE
+							DATE</label
+						>
+						<div class="col-sm-9">
+							<input
+								type="text"
+								class="form-control"
+								id="penalty"
+							/>
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<button
+							onclick="generate()"
+							type="button"
+							class="btn btn-primary"
+							id="generateButton"
+						>
+							Generate document
+						</button>
+					</div>
+				</form>
+			</div>
+		</main>
+	</body>
+	<script>
+		let gen = document.getElementById("generateButton");
+		function loadFile(url, callback) {
+			PizZipUtils.getBinaryContent(url, callback);
+		}
+		function generate() {
+			gen.innerText = "loading";
+			loadFile("template.docx", function (error, content) {
+				if (error) {
+					gen.innerText = "Generate Document";
+					throw error;
+				}
+				var zip = new PizZip(content);
+				var doc = new window.docxtemplater(zip, {
+					paragraphLoop: true,
+					linebreaks: true,
+				});
+				const date = document.getElementById("date").value;
+				const buyer = document.getElementById("buyer").value;
+				const tel = document.getElementById("tel").value;
+				const address = document.getElementById("address").value;
+				const _id = document.getElementById("ID/PP/NO").value;
+				const car_description =
+					document.getElementById("car-description").value;
+				const reg = document.getElementById("reg").value;
+				const chassis = document.getElementById("chassis").value;
+				const engine = document.getElementById("engine").value;
+				const model = document.getElementById("model").value;
+				const registration_year =
+					document.getElementById("registration-year").value;
+				const fuel = document.getElementById("fuel").value;
+				const colour = document.getElementById("colour").value;
+				const cc = document.getElementById("cc").value;
+				const sale_price = document.getElementById("sale price").value;
+				const deposit = document.getElementById("deposit").value;
+				const balance = document.getElementById("balance").value;
+				const _1st = document.getElementById("1st").value;
+				const _2nd = document.getElementById("2nd").value;
+				const _3rd = document.getElementById("3rd").value;
+				const _4th = document.getElementById("4th").value;
+				const _5th = document.getElementById("5th").value;
+				const _6th = document.getElementById("6th").value;
+				const _7th = document.getElementById("7th").value;
+				const _8th = document.getElementById("8th").value;
+				const _9th = document.getElementById("9th").value;
+				const _10th = document.getElementById("10th").value;
+				const payment_mode =
+					document.getElementById("payment-mode").value;
+				const penalty = document.getElementById("penalty").value;
+
+				doc.render({
+					date: date,
+					buyer: buyer,
+					tel: tel,
+					address: address,
+					_id: _id,
+					car_description: car_description,
+					reg: reg,
+					chassis: chassis,
+					engine: engine,
+					model: model,
+					registration_year: registration_year,
+					fuel: fuel,
+					colour: colour,
+					cc: cc,
+					sale_price: parseInt(sale_price).toLocaleString(undefined, {
+						minimumFractionDigits: 2,
+					}),
+					sale_priceInWord: toWordsconvert(sale_price).toUpperCase(),
+					deposit: parseInt(deposit).toLocaleString(undefined, {
+						minimumFractionDigits: 2,
+					}),
+					depositInWord: toWordsconvert(deposit).toUpperCase(),
+					balance: parseInt(balance).toLocaleString(undefined, {
+						minimumFractionDigits: 2,
+					}),
+					balanceInWord: toWordsconvert(balance).toUpperCase(),
+					_1st: parseInt(_1st).toLocaleString(undefined, {
+						minimumFractionDigits: 2,
+					}),
+					_2nd: parseInt(_2nd).toLocaleString(undefined, {
+						minimumFractionDigits: 2,
+					}),
+					_3rd: parseInt(_3rd).toLocaleString(undefined, {
+						minimumFractionDigits: 2,
+					}),
+					_4th: parseInt(_4th).toLocaleString(undefined, {
+						minimumFractionDigits: 2,
+					}),
+					_5th: parseInt(_5th).toLocaleString(undefined, {
+						minimumFractionDigits: 2,
+					}),
+					_6th: parseInt(_6th).toLocaleString(undefined, {
+						minimumFractionDigits: 2,
+					}),
+					_7th: parseInt(_7th).toLocaleString(undefined, {
+						minimumFractionDigits: 2,
+					}),
+					_8th: parseInt(_8th).toLocaleString(undefined, {
+						minimumFractionDigits: 2,
+					}),
+					_9th: parseInt(_9th).toLocaleString(undefined, {
+						minimumFractionDigits: 2,
+					}),
+					_10th: parseInt(_10th).toLocaleString(undefined, {
+						minimumFractionDigits: 2,
+					}),
+					payment_mode: payment_mode,
+					penalty: penalty,
+				});
+				var out = doc.getZip().generate({
+					type: "blob",
+					mimeType:
+						"application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+				});
+				// Output the document using Data-URI
+				saveAs(out, `${buyer}_autobox.docx`);
+				gen.innerText = "Generate Document";
+			});
+		}
+	</script>
+</html>
